@@ -1,16 +1,16 @@
-#!/usr/bin/python3
-import random
-number = random.randint(-10000, 10000)
-if number < 0:
-    number = abs(number)
-    last = (number % 10) * -1
-    number = number * -1
-else:
-    last = number % 10
+import random  # Do not change or remove this line
 
-if last >= 5:
-    print(f"Last digit of {number} is {last} and is greater than 5")
-elif last == 0:
-    print(f"Last digit of {number} is {last} and is 0")
+number = random.randint(-10000, 10000)  # Random number generation
+
+# Extract the last digit
+last_digit = abs(number) % 10
+
+# Print the required output based on the value of the last digit
+print("Last digit of", number, "is", last_digit, end=' ')
+
+if last_digit > 5:
+    print("and is greater than 5")
+elif last_digit == 0:
+    print("and is 0")
 else:
-    print(f"Last digit of {number} is {last} and is less than 6 and not 0")
+    print("and is less than 6 and not 0")
