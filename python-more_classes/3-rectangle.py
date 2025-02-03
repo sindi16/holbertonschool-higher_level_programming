@@ -51,4 +51,3 @@ class Rectangle:
             if i < self.__height - 1:
                 new_str += "\n"
         return new_str
-    
