@@ -1,6 +1,12 @@
 from product import Product
 from user import User
 from shoppingcart import ShoppingCart
+from store import Store
+
+clothes_store = Store()
+cart = ShoppingCart()
+
+
 
 while 1:
     print("1. Register User")
@@ -12,9 +18,11 @@ while 1:
     choice = int(input("Enter your choice: "))
 
     if choice == 1:
-        print("register user")
+        username = input("please enter your username: ")
+        clothes_store.register_user(username)
+    
     elif choice == 2:
-        print("show prod")
+        
     elif choice == 3:
         print("Add prod")
     elif choice == 4:
@@ -24,4 +32,3 @@ while 1:
         break
     else:
         print("Invalid choice. Press 5 if you want to exit!")
-

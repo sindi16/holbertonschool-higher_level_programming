@@ -1,3 +1,5 @@
+from product import Product
+
 class ShoppingCart:
     def __init__(self, items= []):
         self.__items = items
@@ -15,7 +17,7 @@ class ShoppingCart:
                 self.items.remove(product)
                 return self.__items
         return "Product not found"
-        
+
     def __str__(self):
         for product in self.__items:
             print(product)
