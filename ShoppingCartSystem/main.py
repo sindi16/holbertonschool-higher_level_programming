@@ -4,6 +4,8 @@ from shoppingcart import ShoppingCart
 from store import Store
 
 clothes_store = Store()
+p1 = Product("fustan", 100)
+
 cart = ShoppingCart()
 
 
@@ -22,11 +24,15 @@ while 1:
         clothes_store.register_user(username)
     
     elif choice == 2:
+        clothes_store.show_products()
         
     elif choice == 3:
-        print("Add prod")
+        cart.add_product(p1)
+        
+
     elif choice == 4:
-        print("View cart")
+        print(cart)
+        
     elif choice == 5:
         print("Bye bye")
         break

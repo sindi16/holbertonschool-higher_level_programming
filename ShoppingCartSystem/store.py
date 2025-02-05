@@ -19,9 +19,9 @@ class Store:
                 return new_user
         
     def show_products(self):
-            if self.products:
+            if self.__products:
                 print("Available Products:")
-                for product in self.products:
+                for product in self.__products:
                     print(product)
                 else:
                     print("No products available.")
