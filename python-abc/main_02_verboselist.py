@@ -1,4 +1,3 @@
-
 #!/usr/bin/env python3
 from task_02_verboselist import VerboseList
 
