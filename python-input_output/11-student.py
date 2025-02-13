@@ -26,4 +26,3 @@ class Student:
             if key in self.__dict__.keys():
                 self.__dict__[key] = json[key]
         return self.__dict__
-        
