@@ -1,0 +1,30 @@
+{
+    "favorite_things": [
+      {
+        "activity": "Hiking",
+        "description": "Exploring nature trails and mountains",
+        "location": "National Parks"
+      },
+      {
+        "activity": "Reading",
+        "description": "Enjoying mystery and sci-fi novels",
+        "location": "Home or Library"
+      },
+      {
+        "activity": "Coding",
+        "description": "Building web applications with Flask",
+        "location": "Home Office"
+      },
+      {
+        "activity": "Cooking",
+        "description": "Trying out new recipes and cuisines",
+        "location": "Kitchen"
+      },
+      {
+        "activity": "Gaming",
+        "description": "Playing adventure and strategy games",
+        "location": "Living Room"
+      }
+    ]
+  }
+  
