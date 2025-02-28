@@ -19,7 +19,8 @@ class SimpleHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
     def handle_data(self):
         """Handles the /data endpoint, returning a JSON response."""
         data = {"name": "John", "age": 30, "city": "New York"}
-        self._send_response(200, json.dumps(data), "application/json")
+        json_data = json.dumps(data)
+        self._send_response(200, json_data, "application/json")
 
     def handle_status(self):
         """Handles the /status endpoint, returning API status."""
@@ -40,8 +41,12 @@ class SimpleHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(content.encode())
 
-
-def run(server_class=http.server.HTTPServer, handler_class=SimpleHTTPRequestHandler, port=8000):
+  
+def run(
+    server_class=http.server.HTTPServer,
+    handler_class=SimpleHTTPRequestHandler,
+    port=8000,
+):
     """Starts the HTTP server."""
     server_address = ("", port)
     httpd = server_class(server_address, handler_class)
@@ -51,3 +56,4 @@ def run(server_class=http.server.HTTPServer, handler_class=SimpleHTTPRequestHand
 
 if __name__ == "__main__":
     run()
+
