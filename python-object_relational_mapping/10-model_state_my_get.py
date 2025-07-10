@@ -1,19 +1,31 @@
 #!/usr/bin/python3
-""" script that prints the first State object from
- the database hbtn_0e_6_usa"""
-from sys import argv
+"""
+Start link class to table in database
+"""
+
+
+import sys
 from model_state import Base, State
 from sqlalchemy import (create_engine)
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import Session
+
 
 if __name__ == "__main__":
+    eng = create_engine('mysql+mysqldb://{}:{}@localhost/{}'
+                        .format(
+                                sys.argv[1], sys.argv[2], sys.argv[3]),
+                        pool_pre_ping=True
+                        )
+    Base.metadata.create_all(eng)
 
-    engine = create_engine(f"mysql+mysqldb://{argv[1]}:{argv[2]}@localhost:3306/{argv[3]}", pool_pre_ping=True)
-    
-    Session = sessionmaker(bind=engine)
-    session = Session()
+    session = Session(bind=eng)
+    results = session.query(State.id)\
+                     .where(State.name == sys.argv[4])\
+                     .all()
 
-    state = session.query(State).filter_by(name=argv[4]).first()
-    print(state.id if state else "Not found")
-
+    if len(results) > 0:
+        for row in results:
+            print(row.id)
+    else:
+        print("Not found")
     session.close()
