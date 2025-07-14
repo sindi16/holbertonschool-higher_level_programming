@@ -1,7 +1,9 @@
 #!/usr/bin/python3
 
-for number in range(100):
-    if number != 99:
-        print(f"{number:02}", end=", ")
+for i in range(0, 100):
+    if i <= 9:
+        i = "0" + str(i)
+    if i != 99:
+        print("{}".format(i), end=", ")
     else:
-        print(f"{number:02}")
+        print("{}".format(i))
