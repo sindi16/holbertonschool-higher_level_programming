@@ -1,4 +1,4 @@
----creating second table with its atrributes and isert into
+--creating second table with its atrributes and isert into
 CREATE table IF NOT EXISTS second_table(
     id INT,
     name VARCHAR(256),
